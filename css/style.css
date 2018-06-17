@@ -1,0 +1,462 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* common css */
+/* 
+#7828B4 purple
+#9013FE blue
+#F2F2F2 gray1
+#EBEBEB gray2
+#D7D7D7 gray3
+#9B9B9B gray4
+#FFFFFF while
+#000000 black
+
+<!-- font awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<i class="fas fa-map-marker-alt"></i>
+<i class="far fa-calendar-alt"></i>
+<i class="far fa-times-circle"></i>
+<i class="fas fa-search"></i>
+<i class="fas fa-square"></i>  + color_white
+<i class="fas fa-check-square"></i> + color_blue_light
+<i class="fas fa-dollar-sign"></i>
+<i class="fas fa-address-card"></i>
+
+Name="中都愛河濕地公園" 
+Toldescribe=
+Opentime="全天候開放" 
+Ticketinfo="免費參觀" 
+Add="高雄市三民區鼎金後路461巷"
+Picture1="https://khh.travel/FileArtPic.ashx?id=744&w=1280&h=960"
+Changetime="2018/04/19 14:34:42"
+Remarks="僅接受團體預約(15人以上)非學校團體僅開放寒暑假期間預約。" 
+
+*/
+/* 因為某些情況不能繼承故加 inherit 補強 - 如 input 不能繼承 body */
+* {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+body {
+	/* font-family: 'Roboto Medium', arial; */    /* fonts roboto-medium */
+	font-family: Microsoft JhengHei;    /* 微軟正黑體 */
+	/* font-weight: bold; */ 	/* 粗體字 */
+	/* font-size: 16px; - 字型大小(default 16px), also support 120% mode */
+}
+a {
+	text-decoration: none;	/*無底線*/
+}
+.clear-fix {
+	clear: both;	/*對齊,div include height*/
+}
+.title {
+	font-size: 24px;
+	margin-bottom: 24px;
+	padding-top: 24px;
+	padding-left: 6%;		/* RWD */
+}
+.title_left {
+	float: left;
+} 
+.title_right {
+	float: right;
+	font-size: 24px;
+	margin-right: 15%;	/* RWD */
+	border: none;
+	background-color: #EBEBEB;
+	display: none;
+} 
+.title_right:focus {
+	outline: none;
+}
+.title_right:hover {
+	cursor:pointer;
+}
+.subtitle {
+	font-size: 20px;
+	margin-bottom: 16px;
+	padding-left: 6%;		/* RWD */
+}
+
+/* layout css */
+.wrap {
+	position: relative; /* 絕對位置以此為準 */
+	max-width: 1200px; 	/* 最大寬度 */
+	margin: 0 auto;		/* 置至於中間 */
+	background: #F2F2F2;
+	/*border: 1px solid orange;*/
+}
+/* layout css - header */
+.header {
+	height: 92px;			/* 高度 */
+	background-color: #7828B4;
+}
+/* layout css - content */
+.content {
+	height: 500px;
+}
+/* layout css - footer */
+.footer {
+	height: 90px;
+	background-color: #F2F2F2;
+}
+
+/* header */
+.font_log img{
+	float: left;
+	margin-top: 34px;
+	margin-left: 3%;		/* RWD */
+}
+.search_block {
+	float: left;
+	width: 40%;				/* RWD */
+	font-size: 20px;
+	color: #FFFFFF;
+	margin-top: 30px;
+	margin-left: 6%;	/* RWD */
+	padding-bottom: 6px;
+	border-bottom: 2px solid #FFFFFF;
+	overflow: hidden;
+}
+input#search_item {
+	margin-left: 10px;
+	font-size: 20px;
+	background-color: #7828B4;
+	border: none; 
+	width: 75%;	/* RWD */
+}
+input#search_item:focus {
+	outline: none;
+}
+
+/* content */
+.win_left {
+	float: left;
+	margin-left: 3.3%;	/* RWD */
+	width: 25%;					/* RWD */
+}
+.win_right {
+	float: right;
+	margin-right: 3.3%;	/* RWD */
+	width: 65%;					/* RWD */
+	font-size: 16px;
+	line-height: 24px;
+}
+
+/* win_left */
+.side_locate {
+	background-color: #EBEBEB;
+	border-bottom: 3px solid #D7D7D7;
+	overflow: hidden;
+}
+.side_open_time {
+	background-color: #EBEBEB;
+	border-bottom: 3px solid #D7D7D7;
+	overflow: hidden;
+}
+.side_pay {
+	background-color: #EBEBEB;
+	border-bottom: 3px solid #D7D7D7;
+	padding-bottom: 12px;
+	overflow: hidden;
+}
+input[type="checkbox"] {
+	width: 16px;
+	height: 16px;	
+}
+.side_locate select {
+		font-size: 16px;
+		margin-left: 6%;	/* RWD */
+		margin-bottom: 24px;
+		width: 33%;				/* RWD */
+}
+
+/* win_right */
+.list_item {
+	font-size: 24px;
+	margin-top: 24px;
+}
+.filter_btn {
+	margin-top: 12px;
+	border-radius: 20px;
+	font-size: 20px;
+	line-height: 35px;
+	color: #9013FE;
+	background-color: #F2F2F2;
+	border: 1px solid #9013FE;
+}
+.filter_btn:hover {
+	cursor:pointer;
+}
+.filter_btn:focus {
+	outline: none;	
+}
+.one_spot {
+	background: #FFFFFF;
+	margin-top: 24px;
+	padding-bottom: 10px;
+	display: none;
+}
+.one_spot:hover {
+	box-shadow: 10px 10px 5px #888888;
+	cursor:pointer;
+}
+
+/* one_spot */
+.one_spot img{
+	float: left;
+	width: 28%;			/* RWD */
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.spot_title {
+	font-size: 20px;
+	font-weight: bold; 	/* 粗體字 */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #7828B4;
+	margin-left: 50px;
+}
+.spot_discribe1 {
+	font-size: 16px;
+	line-height: 24px;
+	height: 50px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.spot_discribe {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.spot_dollar {
+	font-weight: bold; 	/* 粗體字 */
+	margin-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.spot_locate {
+	color: #9B9B9B;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* footer */
+#shift_block {
+	float: right;
+	margin-right: 3.3%;	/* RWD */
+}
+.btn_shift {
+	width: 42px;
+	height: 42px;
+	background-color: #FFFFFF;
+	font-size: 22px;
+	margin-top: 24px;
+	margin-left: 1px;
+	padding: 0px;
+	border-width: 0px;
+	color: #9013FE;
+}
+.btn_shift:hover {
+	cursor:pointer;
+}
+.btn_show {  // jist show for "..." button
+	width: 42px;
+	height: 42px;
+	background-color: #FFFFFF;
+	font-size: 22px;
+	margin-top: 24px;
+	margin-left: 1px;
+	padding: 0px;
+	border-width: 0px;
+	color: #9013FE;
+}
+
+/* win_right2 */
+.win_right2 {
+	float: right;
+	margin-right: 3.3%;	/* RWD */
+	width: 65%;					/* RWD */
+	font-size: 16px;
+	line-height: 24px;
+	display: none;
+}
+.spot2_title {
+	height: auto;
+	background-color: #EBEBEB;
+	font-size: 24px;
+	line-height: 48px;
+	color: #9B9B9B ;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding-left: 10px;
+}
+.spot2_title span{
+	color: #7828B4;
+}
+.win_right2 img {
+	width: 100%;		/* RWD */
+}
+.spot2_title2 {
+	font-size: 36px;
+	line-height: 48px;
+	color: #7828B4;
+	margin-bottom: 24px;
+	height: auto;
+}
+.spot2_content {
+	padding: 3.7% 10.2%;		/* RWD */
+	background-color: #FFFFFF;
+	margin-bottom: 24px;
+}
+.spot2_content .spot_discribe{
+	margin-top: 20px;
+}
+.btn_home {
+	background-color: #FFFFFF;
+	font-size: 22px;
+	margin-top:5px;
+	margin-left: 0px;
+}
+.btn_home:hover {
+	cursor:pointer;
+}
+
+/* RWD width 415px ~ 768px */
+@media only screen and (max-width: 768px){
+	.win_left {
+		margin-left: 0%;
+	}
+	.win_right {
+		width: 68%;
+	}
+	.one_spot img{
+		width: 100%;
+		margin-right: 0px;
+	}
+	.spot_title {
+		margin-left: 0px;
+	}
+}
+
+/* RWD width <= 414px */
+@media only screen and (max-width: 414px){
+	/*change mobile search screen*/
+	.header {
+		height: auto;			/* 高度 */
+		background-color: #EBEBEB;
+		padding-bottom: 10px;
+		border-bottom: 3px solid #D7D7D7;
+	}
+	.font_log{
+		background: #7828B4;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.font_log img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 152px;
+		float: none;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.search_block {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 14px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid #000000;
+
+	 	float: none;
+	 	margin-top: 0;
+		color: #000000;
+	}
+	input#search_item {
+		margin-left: 10px;
+		font-size: 20px;
+		background-color: #EBEBEB;
+		border: none; 
+	}
+
+	.win_left {
+		margin-left: 0%;
+		width: 100%;
+	}
+	.win_right {
+		margin-right: 3%;
+		margin-left: 3%;
+		width: 94%;
+	}
+	.list_item {
+		display: none;
+	}
+	.filter_show {
+		display: none;
+	}
+	.win_right2 {
+		float: right;
+		margin-right: 0%;
+		width: 100%;
+		font-size: 16px;
+		line-height: 24px;
+	}
+}

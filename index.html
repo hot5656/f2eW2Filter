@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- viewport RWD 需求,寬度變成載具的寬度 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="css/style.css">
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+	<div class="wrap">
+		<!-- head  -->
+		<div class="header">
+			<div class="font_log">
+				<a href="index.html"><img src="img/logo.png" alt="logo"></a>
+			</div>
+			<div class="search_block">
+				<i class="fas fa-search"></i>
+				<input type="text" onkeypress="inputSearch(event)" placeholder="Explore your own activities" id="search_item" name="search_item">
+			</div>
+		</div>
+		<!-- content -->
+		<div class="content">
+			<div class="win_left">
+				<div class="side_locate">
+						<div class="title">
+							<div class="title_left">地區</div>
+							<button  class="title_right" onclick="switchFilterHeight(event,0)">+</button>
+							<div class="clear-fix"></div>
+						</div> 
+						<select onclick="locateSelect(event)" class="location" name="location" id="location">
+							<option value="全部">全部</option>
+							<option value="甲仙區">甲仙區</option>
+							<option value="三民區">三民區</option>
+							<option value="大樹區">大樹區</option>
+							<option value="小港區">小港區</option>
+							<option value="仁武區">仁武區</option>
+							<option value="內門區">內門區</option>
+							<option value="六龜區">六龜區</option>
+							<option value="左營區">左營區</option>
+							<option value="永安區">永安區</option>
+							<option value="田寮區">田寮區</option>
+							<option value="甲仙區">甲仙區</option>
+							<option value="杉林區">杉林區</option>
+							<option value="那瑪夏">那瑪夏</option>
+							<option value="岡山區">岡山區</option>
+							<option value="前金區">前金區</option>
+							<option value="前鎮區">前鎮區</option>
+							<option value="美濃區">美濃區</option>
+							<option value="美濃區">美濃區</option>
+							<option value="茄萣區">茄萣區</option>
+							<option value="茂林區">茂林區</option>
+							<option value="苓雅區">苓雅區</option>
+							<option value="桃源區">桃源區</option>
+							<option value="高雄市">高雄市</option>
+							<option value="梓官區">梓官區</option>
+							<option value="新興區">新興區</option>
+							<option value="楠梓區">楠梓區</option>
+							<option value="鼓山區">鼓山區</option>
+							<option value="旗津區">旗津區</option>
+							<option value="鳳山區">鳳山區</option>
+						</select>
+				</div>
+				<div class="side_open_time">
+					<div class="title">
+						<div class="title_left">開放時間</div>
+						<button  class="title_right" onclick="switchFilterHeight(event,1)">+</button>
+						<div class="clear-fix"></div>
+					</div>
+					<div class="subtitle">
+						<input class="check_filter" onclick="conditionSelect(event)" type="checkbox" value="all_day" name="open_condition" id="all_day">
+						全天候開放
+					</div>
+					<div class="subtitle">
+						<input class="check_filter" onclick="conditionSelect(event)" type="checkbox" value="not_all_day" name="open_condition" id="not_all_day">
+						非全天候開放
+					</div>
+				</div>	
+				<div class="side_pay">
+					<div class="title">
+						<div class="title_left">付費條件</div>
+						<button  class="title_right" onclick="switchFilterHeight(event,2)">+</button>
+						<div class="clear-fix"></div>
+					</div> 
+					<div class="subtitle">
+						<input class="check_filter" onclick="conditionSelect(event)" type="checkbox" value="p_free" name="pay_condition" id="p_pay"> 
+						免費參觀
+					</div>
+					<div class="subtitle">
+						<input class="check_filter" onclick="conditionSelect(event)" type="checkbox" value="p_pay" name="pay_condition" id="p_free"> 
+						非免費參觀
+					</div>
+				</div>
+			</div>
+			<div class="win_right">
+				<div class="list_item">景點筆數 : </div>
+				<div class="filter_show">
+					<button onclick="clearFilter(0)" class="filter_btn" id="filter_btn1"><i class="far fa-times-circle"></i></button>
+					<button onclick="clearFilter(1)" class="filter_btn" id="filter_btn2"><i class="far fa-times-circle"></i></i></button>
+					<button onclick="clearFilter(2)" class="filter_btn" id="filter_btn3"><i class="far fa-times-circle"></i></i></button>
+				</div>
+				<div class="one_spot" onclick="showOneSpot(event, 0)">
+					<img src="img/FileArtPic.jpg" alt="spot_jpg">
+					<div class="spot_title">高雄願景館</div>
+					<div class="spot_discribe1">
+						高雄願景館的前身是日治時期興建的高雄市舊火車站，外觀是”和洋混合式建築”氣勢雄偉，內部則為西式的玄關及大廳。2002年為了配合鐵路、捷運、高鐵的三鐵共構，這棟老火車站建築物遷移到附近的空地上，並由市府規劃，以"數位博物館"的型式，其中歷史迴廊對於鐵道文化及往日風貌有一系列回顧，讓遊客可以重溫老車站的過往風華，而3D虛擬互動區則讓參觀者以虛擬實境的方式飛越高雄的重要景點並同時見證高雄的發展歷史。願景館是認識高雄過去與未來的最佳場所，而願景橋、鐵路文化棧道、風的祝福廣場…等公共藝術區也是遊客們最愛駐足與拍照留念的美麗景點。
+					</div>
+					<div class="spot_dollar">
+						<i class="fas fa-dollar-sign"></i>
+						100
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+<!-- 					<div class="spot_address">
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div> -->
+<!-- 					<div class="clear-fix"></div> -->
+					<div class="spot_locate">
+						<i class="fas fa-map-marker-alt"></i>
+						三民區
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+<!-- 					<div class="spot_opentime">
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="clear-fix"></div>
+				</div>	
+				<div class="one_spot" onclick="showOneSpot(event, 1)">
+					<img src="img/FileArtPic.jpg" alt="spot_jpg">
+					<div class="spot_title">高雄願景館</div>
+					<div class="spot_discribe1">
+						高雄願景館的前身是日治時期興建的高雄市舊火車站，外觀是”和洋混合式建築”氣勢雄偉，內部則為西式的玄關及大廳。2002年為了配合鐵路、捷運、高鐵的三鐵共構，這棟老火車站建築物遷移到附近的空地上，並由市府規劃，以"數位博物館"的型式，其中歷史迴廊對於鐵道文化及往日風貌有一系列回顧，讓遊客可以重溫老車站的過往風華，而3D虛擬互動區則讓參觀者以虛擬實境的方式飛越高雄的重要景點並同時見證高雄的發展歷史。願景館是認識高雄過去與未來的最佳場所，而願景橋、鐵路文化棧道、風的祝福廣場…等公共藝術區也是遊客們最愛駐足與拍照留念的美麗景點。
+					</div>
+					<div class="spot_dollar">
+						<i class="fas fa-dollar-sign"></i>
+						100
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+<!-- 					<div class="spot_address">
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="spot_locate">
+						<i class="fas fa-map-marker-alt"></i>
+						三民區
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+<!-- 					<div class="spot_opentime">
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="clear-fix"></div>
+				</div>
+				<div class="one_spot" onclick="showOneSpot(event, 2)">
+					<img src="img/FileArtPic.jpg" alt="spot_jpg">
+					<div class="spot_title">高雄願景館</div>
+					<div class="spot_discribe1">
+						高雄願景館的前身是日治時期興建的高雄市舊火車站，外觀是”和洋混合式建築”氣勢雄偉，內部則為西式的玄關及大廳。2002年為了配合鐵路、捷運、高鐵的三鐵共構，這棟老火車站建築物遷移到附近的空地上，並由市府規劃，以"數位博物館"的型式，其中歷史迴廊對於鐵道文化及往日風貌有一系列回顧，讓遊客可以重溫老車站的過往風華，而3D虛擬互動區則讓參觀者以虛擬實境的方式飛越高雄的重要景點並同時見證高雄的發展歷史。願景館是認識高雄過去與未來的最佳場所，而願景橋、鐵路文化棧道、風的祝福廣場…等公共藝術區也是遊客們最愛駐足與拍照留念的美麗景點。
+					</div>
+					<div class="spot_dollar">
+						<i class="fas fa-dollar-sign"></i>
+						100
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+<!-- 					<div class="spot_address">
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="spot_locate">
+						<i class="fas fa-map-marker-alt"></i>
+						三民區
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+<!-- 					<div class="spot_opentime">
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="clear-fix"></div>
+				</div>
+			</div>
+			<div class="win_right2">
+				<div class="spot2_title"><span>Explore</span> / 高雄願景館</div>
+				<img src="img/FileArtPic.jpg" alt="spot_jpg">
+				<div class="spot2_content">
+					<div class="spot2_title2">高雄願景館</div>
+					<div class="spot_dollar">
+						<i class="fas fa-dollar-sign"></i>
+						100
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+<!-- 					<div class="spot_address">
+						<i class="fas fa-address-card"></i>
+						高雄市三民區建國二路318號
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="spot_locate">
+						<i class="fas fa-map-marker-alt"></i>
+						三民區
+						<i class="far fa-calendar-alt"></i>
+						週二至週日10:00-18:00，每週一公休
+					</div>
+<!-- 					<div class="spot_opentime">
+						<i class="far fa-calendar-alt"></i>
+		回主頁				週二至週日10:00-18:00，每週一公休
+					</div>
+					<div class="clear-fix"></div> -->
+					<div class="spot_discribe">
+						高雄願景館的前身是日治時期興建的高雄市舊火車站，外觀是”和洋混合式建築”氣勢雄偉，內部則為西式的玄關及大廳。2002年為了配合鐵路、捷運、高鐵的三鐵共構，這棟老火車站建築物遷移到附近的空地上，並由市府規劃，以"數位博物館"的型式，其中歷史迴廊對於鐵道文化及往日風貌有一系列回顧，讓遊客可以重溫老車站的過往風華，而3D虛擬互動區則讓參觀者以虛擬實境的方式飛越高雄的重要景點並同時見證高雄的發展歷史。願景館是認識高雄過去與未來的最佳場所，而願景橋、鐵路文化棧道、風的祝福廣場…等公共藝術區也是遊客們最愛駐足與拍照留念的美麗景點。
+					</div>
+					<button class="btn_home" onclick="goHomePage()">回主頁</butto> 
+				</div>
+			</div>
+		</div>
+		<div class="clear-fix"></div>
+		<!-- footer -->
+		<div class="footer">
+			<div id="shift_block">
+				<button class="btn_shift"><<</button>
+				<button class="btn_shift">1</button>
+				<button class="btn_shift">2</button>
+				<button class="btn_shift">3</button>
+				<button class="btn_shift">4</button>
+				<button class="btn_shift">5</button>
+				<button class="btn_shift">...</button>
+				<button class="btn_shift">>></button>
+			</div>
+		</div>
+	</div>
+
+	<!-- javascript -->
+	<script src="all.js"></script>
+</body>
+</html>
